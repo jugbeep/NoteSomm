@@ -1,0 +1,8 @@
+{
+  "name": "notesomm",
+  "app_id": "8c910355",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
