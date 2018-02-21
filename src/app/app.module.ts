@@ -7,7 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule, Storage } from '@ionic/storage';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, Config } from 'ionic-angular';
+import { AngularFireModule, FirebaseAppConfigToken, FirebaseAppConfig } from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { Environment } from './env'
+
 
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
@@ -15,6 +19,13 @@ import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
 
+//firebase config
+export const firebaseConfig = {
+  apiKey: Environment.apiKey,
+  authDomain: Environment.authDomain,
+  databaseURL: Environment.databaseURL,
+  storageBucket: Environment.storageBucket
+};
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
@@ -51,7 +62,8 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
