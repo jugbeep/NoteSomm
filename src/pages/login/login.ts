@@ -22,7 +22,7 @@ export class LoginPage {
     try {
       const result = await this.afAuth.auth.signInWithEmailAndPassword(user.email, user.password);
       if (result) {
-        this.navCtrl.setRoot('HomePage');
+        this.navCtrl.setRoot('ListMasterPage');
       }  
     }
     catch (e) {
@@ -37,7 +37,21 @@ export class LoginPage {
         user.password
       );
       if (result) {
-        this.navCtrl.setRoot('HomePage');
+        this.navCtrl.setRoot('ListMasterPage');
+      }
+    } catch (e) {
+      let errorMessage = e.message
+      alert(errorMessage);
+    }
+  }
+  async signup(user: User) {
+    try {
+      const result = await this.afAuth.auth.createUserWithEmailAndPassword(
+        user.email,
+        user.password
+      );
+      if (result) {
+        this.navCtrl.setRoot('ListMasterPage');
       }
     } catch (e) {
       let errorMessage = e.message
