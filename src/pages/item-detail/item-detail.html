@@ -12,7 +12,28 @@
   </div>
 
   <div class="item-detail" padding>
-    <h2>{{item.name}}</h2>
+    <h2>{{item.name}} Notes:</h2>
     <p>{{item.about}}</p>
+
+    <form [formGroup]="wine" (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>Wine Name:</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Color:</ion-label>
+        <ion-select formControlName="description">
+          <ion-option><div class="color">something</div></ion-option>
+          <ion-option><div class="color">something</div></ion-option>
+          <ion-option><div class="color">something</div></ion-option>
+          <ion-option><div class="color">something</div></ion-option>
+          <ion-option><div class="color">something</div></ion-option>
+          <ion-option><div class="color">something</div></ion-option>
+          <ion-option><div class="color">something</div></ion-option>
+        </ion-select>
+      </ion-item>
+      <button ion-button type="submit" [disabled]="!wine.valid">Submit</button>
+    </form>
+    
   </div>
 </ion-content>

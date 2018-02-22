@@ -8,7 +8,7 @@ export class Items {
 
   defaultItem: any = {
     "name": "Wine",
-    "profilePic": "assets/img/speakers/bear.jpg",
+    "profilePic": "assets/img/redwine.jpg",
   };
 
 
@@ -20,32 +20,19 @@ export class Items {
       },
       {
         "name": "White Wine",
-        "profilePic": "assets/img/whitewine.jpg",
+        "profilePic": "assets/img/whitewine.jpeg",
       },
       {
-        "name": "Donald Duck",
-        "profilePic": "assets/img/speakers/duck.jpg",
-        "about": "Donald is a Duck."
+        "name": "Bubbly",
+        "profilePic": "assets/img/bubbly.jpg",
       },
       {
-        "name": "Eva Eagle",
-        "profilePic": "assets/img/speakers/eagle.jpg",
-        "about": "Eva is an Eagle."
+        "name": "Dessert",
+        "profilePic": "assets/img/dessertwine.jpg",
       },
       {
-        "name": "Ellie Elephant",
-        "profilePic": "assets/img/speakers/elephant.jpg",
-        "about": "Ellie is an Elephant."
-      },
-      {
-        "name": "Molly Mouse",
-        "profilePic": "assets/img/speakers/mouse.jpg",
-        "about": "Molly is a Mouse."
-      },
-      {
-        "name": "Paul Puppy",
-        "profilePic": "assets/img/speakers/puppy.jpg",
-        "about": "Paul is a Puppy."
+        "name": "Other",
+        "profilePic": "assets/img/misc.jpg",
       }
     ];
 

@@ -1,14 +1,18 @@
 page-item-detail {
   .item-profile {
-    width: 100%;
+    width: 25%;
     background-position: center center;
-    background-size: cover;
-    height: 250px;
+    height: 50px;
   }
 
   .item-detail {
     width: 100%;
     background: white;
     position: absolute;
+  }
+  .color {
+    background-color: red;
+    height: 15px;
+    width: 15px;
   }
 }
