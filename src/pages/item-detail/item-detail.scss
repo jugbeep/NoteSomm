@@ -1,8 +1,14 @@
 page-item-detail {
+  div.alert-radio-label {
+    background-color: red;
+  }
+
   .item-profile {
-    width: 25%;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
     background-position: center center;
-    height: 50px;
+    margin: 3% 45% 0% 45%;
   }
 
   .item-detail {
@@ -10,9 +16,14 @@ page-item-detail {
     background: white;
     position: absolute;
   }
-  .color {
+  #color {
     background-color: red;
     height: 15px;
     width: 15px;
+  }
+  #colorbox {
+    width: 20px;
+    height: 20px;
+    background-color: red;
   }
 }

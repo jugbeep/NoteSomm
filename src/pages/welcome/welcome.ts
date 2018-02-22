@@ -24,3 +24,5 @@ export class WelcomePage {
 //     this.navCtrl.push('SignupPage');
 //   }
   }
+
+  

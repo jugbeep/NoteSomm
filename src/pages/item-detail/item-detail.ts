@@ -23,7 +23,7 @@ export class ItemDetailPage {
       description: [''],
     });
   }
-
+  
   logForm(){
     console.log(this.wine.value)
   }

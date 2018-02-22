@@ -16,4 +16,5 @@ import { ItemDetailPage } from './item-detail';
     ItemDetailPage
   ]
 })
+
 export class ItemDetailPageModule { }
