@@ -60,7 +60,7 @@ export class ItemDetailPage {
     this.item = navParams.get('item') || items.defaultItem;
     this.wine = this.formBuilder.group({
       name: ['', Validators.required],
-      color: ['', Validators.required],
+      color: ['', Validators.required]
     });
   }
   
