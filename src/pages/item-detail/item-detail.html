@@ -165,22 +165,22 @@
           </ion-item>
           <ion-item>
             <ion-label label="">Deep Tawny</ion-label>
-            <ion-radio id='colorbox34' value="Medium Tawny"></ion-radio>
+            <ion-radio id='colorbox34' value="Deep Tawny"></ion-radio>
           </ion-item>
         </ion-list>
-        <ion-list radio-group formControlName="aromas">
+        <hr>
+        <!-- <ion-list radio-group formControlName="aromas">
+          <ion-label>Aromas</ion-label>
           <ion-item>
-              <ion-label>Aromas</ion-label>
-              <ion-select multiple="true">
-                <ion-option value="Iris">Iris</ion-option>
-                <ion-option value="Peony">Peony</ion-option>
-                <ion-option value="Elderflower">Elderflower</ion-option>
-                <ion-option value="Acacia">Acacia</ion-option>
-                <ion-option value="Lilac">Lilac</ion-option>
-                <ion-option value="Jasmine">Jasmine</ion-option>
-              </ion-select>
-            </ion-item>
+            <ion-select multiple='true' [(ngModel)]='selectedAroma' [ngModelOptions]="{standalone: true}">
+              <ion-option *ngFor='let aroma of aromas' [value]='selectedAroma'>{{aroma.aroma}}</ion-option>
+            </ion-select>
+          </ion-item>
+          <ion-item>
+              {{ selectedAroma }} 
+          </ion-item>
         </ion-list>
+        -->
       <button ion-button type="submit" [disabled]="!wine.valid">Submit</button>
     </form>
   </div>
