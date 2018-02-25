@@ -1,34 +1,28 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>{{ item.name }}</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
+  
+  
 <ion-content>
-  <ion-buttons class='camera'>
+    <ion-buttons class='camera'>
       <button ion-button icon-only full (click)="addItem()">
         <ion-icon name="ios-camera"></ion-icon>Bottle Shot
       </button>
     </ion-buttons>
-
+  
   <div id="item-detail" padding>
-    <h2>{{item.name}} Notes:</h2>
-    <p>{{item.about}}</p>
-
-    <ion-item>
-      <ion-label floating>Wine Name</ion-label>
-      <ion-input type='text' [(ngModel)]='wineItem.wineName'></ion-input>
-    </ion-item>
-    
-    <form [formGroup]="wine" (ngSubmit)="logForm()">
+      <h2>{{item.name}} Notes:</h2>
+      <p>{{item.about}}</p>
+  
+    <form [formGroup]="wine" >
       <ion-item>
         <ion-label floating>Wine Name:</ion-label>
-        <ion-input type="text" formControlName="name"></ion-input>
+        <ion-input type="text" formControlName="name" [(ngModel)]='wineItem.wineName'></ion-input>
       </ion-item>
-      <ion-list radio-group formControlName="color">
+
+      <ion-list radio-group formControlName="color" [(ngModel)]='wineItem.wineColor'>
         <ion-label>Color:</ion-label>
           <ion-item>
             <ion-label label="Pale Straw">Pale Straw</ion-label>
@@ -81,7 +75,7 @@
           <ion-item>
             <ion-label label="">Pale Amber</ion-label>
             <ion-radio id='colorbox11'value="Pale Amber"></ion-radio>
-          </ion-item>
+          </ion-item>         
           <ion-item>
             <ion-label label="">Medium Amber</ion-label>
             <ion-radio id='colorbox12'value="Medium Amber"></ion-radio>
@@ -105,7 +99,7 @@
           <ion-item>
             <ion-label label="">Pale Salmon</ion-label>
             <ion-radio id='colorbox17'value="Pale Salmon"></ion-radio>
-            </ion-item>
+          </ion-item>
           <ion-item>
             <ion-label label="">Medium Salmon</ion-label>
             <ion-radio id='colorbox18'value="Medium Salmon"></ion-radio>
@@ -115,11 +109,11 @@
             <ion-radio id='colorbox19'value="Deep Salmon"></ion-radio>
           </ion-item>
           <ion-item>
-          <ion-label label="">Pale Pink</ion-label>
+            <ion-label label="">Pale Pink</ion-label>
             <ion-radio id='colorbox20'value="Pale Pink"></ion-radio>
           </ion-item>
           <ion-item>
-          <ion-label label="">Medium Pink</ion-label>
+            <ion-label label="">Medium Pink</ion-label>
             <ion-radio id='colorbox21'value="Medium Pink"></ion-radio>
           </ion-item>
           <ion-item>
@@ -127,7 +121,7 @@
             <ion-radio id='colorbox22'value="Deep Pink"></ion-radio>
           </ion-item>
           <ion-item>
-          <ion-label label="">Pale Ruby</ion-label>
+            <ion-label label="">Pale Ruby</ion-label>
             <ion-radio id='colorbox23'value="Pale Ruby"></ion-radio>
           </ion-item>
           <ion-item>
@@ -139,7 +133,7 @@
             <ion-radio id='colorbox25'value="Deep Ruby"></ion-radio>
           </ion-item>
           <ion-item>
-          <ion-label label="">Pale Purple</ion-label>
+            <ion-label label="">Pale Purple</ion-label>
             <ion-radio id='colorbox26'value="Pale Purple"></ion-radio>
           </ion-item>
           <ion-item>
@@ -151,7 +145,7 @@
             <ion-radio id='colorbox28' value="Deep Purple"></ion-radio>
           </ion-item>
           <ion-item>
-          <ion-label label="">Pale Garnet</ion-label>
+            <ion-label label="">Pale Garnet</ion-label>
             <ion-radio id='colorbox29' value="Pale Garnet"></ion-radio>
           </ion-item>
           <ion-item>
@@ -163,7 +157,7 @@
             <ion-radio id='colorbox31' value="Deep Garnet"></ion-radio>
           </ion-item>
           <ion-item>
-          <ion-label label="">Pale Tawny</ion-label>
+            <ion-label label="">Pale Tawny</ion-label>
             <ion-radio id='colorbox32' value="Pale Tawny"></ion-radio>
           </ion-item>
           <ion-item>
@@ -175,11 +169,13 @@
             <ion-radio id='colorbox34' value="Deep Tawny"></ion-radio>
           </ion-item>
         </ion-list>
+
         <hr>
+
         <ion-list radio-group formControlName="aromas">
-          <ion-label floating>Aromas</ion-label>
+          <ion-label>Aromas</ion-label>
           <ion-item>
-            <ion-select multiple='true' [(ngModel)]='selectedAroma' [ngModelOptions]="{standalone: true}">
+            <ion-select multiple='true' [(ngModel)]='wineItem.wineAroma' [ngModelOptions]="{standalone: true}">
               <ion-option *ngFor='let aroma of aromas' ng-Value='selectedAroma'>{{aroma.aroma}}</ion-option>
             </ion-select>
           </ion-item>
@@ -187,17 +183,9 @@
               {{ selectedAroma }} 
           </ion-item>
         </ion-list>
-      
-        <ion-list radio-group fromControlName='aromas'>
-          <ion-label>Aromas</ion-label>
-          <ion-item>
-            
-          </ion-item>
-        </ion-list>
-
-      
+        
+      <button ion-button type="submit" (click)="addWine(wineItem)">Submit</button>
     </form>
-    <button ion-button type="submit" (click)="addWine(wineItem)">Submit</button>
   </div>
 </ion-content>
 
