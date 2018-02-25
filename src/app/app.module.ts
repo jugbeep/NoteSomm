@@ -11,8 +11,7 @@ import { IonicApp, IonicErrorHandler, IonicModule, Config } from 'ionic-angular'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Environment } from './env'
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AddWinePage } from '../pages/add-wine/add-wine';
 
 
@@ -68,7 +67,8 @@ export function provideSettings(storage: Storage) {
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
