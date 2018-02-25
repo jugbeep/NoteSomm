@@ -11,7 +11,9 @@ import { IonicApp, IonicErrorHandler, IonicModule, Config } from 'ionic-angular'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Environment } from './env'
-import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+import { AddWinePage } from '../pages/add-wine/add-wine';
 
 
 import { Items } from '../mocks/providers/items';
@@ -50,7 +52,8 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    AddWinePage
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,8 @@ export function provideSettings(storage: Storage) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    AddWinePage
   ],
   providers: [
     Api,

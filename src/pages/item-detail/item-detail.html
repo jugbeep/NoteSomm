@@ -8,17 +8,24 @@
 
 
 <ion-content>
-  <ion-avatar>
-    <img id="item-profile" src='../assets/img/redwine.jpg'>
-  </ion-avatar>
+  <ion-buttons class='camera'>
+      <button ion-button icon-only full (click)="addItem()">
+        <ion-icon name="ios-camera"></ion-icon>Bottle Shot
+      </button>
+    </ion-buttons>
 
   <div id="item-detail" padding>
     <h2>{{item.name}} Notes:</h2>
     <p>{{item.about}}</p>
 
+    <ion-item>
+      <ion-label floating>Wine Name</ion-label>
+      <ion-input type='text' [(ngModel)]='wineItem.wineName'></ion-input>
+    </ion-item>
+    
     <form [formGroup]="wine" (ngSubmit)="logForm()">
       <ion-item>
-        <ion-label>Wine Name:</ion-label>
+        <ion-label floating>Wine Name:</ion-label>
         <ion-input type="text" formControlName="name"></ion-input>
       </ion-item>
       <ion-list radio-group formControlName="color">
@@ -169,60 +176,30 @@
           </ion-item>
         </ion-list>
         <hr>
-        <!-- <ion-list radio-group formControlName="aromas">
-          <ion-label>Aromas</ion-label>
+        <ion-list radio-group formControlName="aromas">
+          <ion-label floating>Aromas</ion-label>
           <ion-item>
             <ion-select multiple='true' [(ngModel)]='selectedAroma' [ngModelOptions]="{standalone: true}">
-              <ion-option *ngFor='let aroma of aromas' [value]='selectedAroma'>{{aroma.aroma}}</ion-option>
+              <ion-option *ngFor='let aroma of aromas' ng-Value='selectedAroma'>{{aroma.aroma}}</ion-option>
             </ion-select>
           </ion-item>
           <ion-item>
               {{ selectedAroma }} 
           </ion-item>
         </ion-list>
-        -->
-      <button ion-button type="submit" [disabled]="!wine.valid">Submit</button>
+      
+        <ion-list radio-group fromControlName='aromas'>
+          <ion-label>Aromas</ion-label>
+          <ion-item>
+            
+          </ion-item>
+        </ion-list>
+
+      
     </form>
+    <button ion-button type="submit" (click)="addWine(wineItem)">Submit</button>
   </div>
 </ion-content>
 
 
 
-
-<!-- 
-Pale Straw
-Medium Straw
-Deep Straw
-Pale Yellow
-Medium Yellow
-Deep Yellow
-Pale Gold
-Medium Gold
-Deep Gold
-Pale Brown
-Medium Brown
-Deep Brown
-Pale Amber
-Medium Amber
-Deep Amber
-Pale Copper
-Medium Copper
-Deep Copper
-Pale Salmon
-Medium Salmon
-Deep Salmon
-Pale Pink
-Medium Pink
-Deep Pink
-Pale Ruby
-Medium Ruby
-Deep Ruby
-Pale Purple
-Medium Purple
-Deep Purple
-Pale Garnet
-Medium Garnet
-Deep Garnet
-Pale Tawny
-Medium Tawny
-Deep Tawny -->

@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Validators, FormBuilder, FormGroup, RadioControlValueAccessor } from '@angular/forms';
 import { Items } from '../../providers/providers';
-import { Aromas } from './aromas'
+import { Aromas } from './aromas';
+import { WineItem } from '../../models/wine-item/wine-item';
+
 
 @IonicPage()
 @Component({
@@ -10,8 +12,9 @@ import { Aromas } from './aromas'
   templateUrl: 'item-detail.html'
 })
 export class ItemDetailPage {
-  item: any;
+  wineItem = {} as WineItem;
   color: any;
+  item: any;
   selectedAroma: any;
   aromas = [
     { id: 1, aroma: 'Iris' },
@@ -132,9 +135,12 @@ export class ItemDetailPage {
 
   private wine : FormGroup;
   constructor(
+
     public navCtrl: NavController, 
+    public items: Items, 
+    public modalCtrl: ModalController,
     navParams: NavParams, 
-    items: Items,
+
 
     private formBuilder: FormBuilder) {
     this.item = navParams.get('item') || items.defaultItem;
@@ -144,6 +150,20 @@ export class ItemDetailPage {
       aromas: ['', Validators]
     });
   }
+  
+  addWine(wineItem: WineItem) {
+    console.log(wineItem)
+  }
+  
+  // addItem() {
+  //   let addModal = this.modalCtrl.create('ItemCreatePage');
+  //   addModal.onDidDismiss(item => {
+  //     if (item) {
+  //       this.items.add(item);
+  //     }
+  //   })
+  //   addModal.present();
+  // }
   
   logForm(){
     console.log(this.wine.value)
