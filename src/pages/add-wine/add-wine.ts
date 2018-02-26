@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { WineItem } from '../../models/wine-item/wine-item';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
@@ -13,17 +13,46 @@ export class AddWinePage {
   wineListRef$: FirebaseListObservable<WineItem[]>
 
   constructor(
+    private actionSheet: ActionSheetController,
     public navCtrl: NavController, 
     public navParams: NavParams,
     private database: AngularFireDatabase) {
 
     this.wineListRef$ = this.database.list('wine-entry');
 
-
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad AddWinePage');
+  selectWineItem(wineItem: WineItem) {
+    //CRUD on wine item
+
+    this.actionSheet.create({
+      title: `${wineItem.wineName}`,
+      buttons: [
+        {
+          text: 'Edit',
+          handler: () => {
+            //send user to editwinepage and pass key as param
+          } 
+        },
+        {
+          text: 'Delete',
+          role: 'destructive',
+          handler: () => {
+            //delete the current item
+            this.wineListRef$.remove(wineItem.$key)
+          }
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: ()=> {
+            console.log('The user cancelled');
+          }
+        }
+      ]
+    }).present();
   }
+
+x
 
 }

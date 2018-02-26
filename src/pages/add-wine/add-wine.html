@@ -11,7 +11,7 @@
 <ion-content padding>
 
   <ion-list>
-    <ion-item *ngFor='let x of wineListRef$ | async'>
+    <ion-item *ngFor='let x of wineListRef$ | async' (click)='selectWineItem(x)'>
       <h2>Wine Name: {{x.wineName}}</h2>
       <h3>Color: {{x.wineColor}}</h3>
       <h3>Aromas: {{x.wineAroma}}</h3>

@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { Validators, FormBuilder, FormGroup, RadioControlValueAccessor } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Items } from '../../providers/providers';
 import { Aromas } from './aromas';
 import { WineItem } from '../../models/wine-item/wine-item';
