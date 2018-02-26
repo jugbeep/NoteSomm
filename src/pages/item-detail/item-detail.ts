@@ -36,15 +36,12 @@ export class ItemDetailPage {
       });
   }
   
+  //send wine to the db
   addWine(wineItem: WineItem) {
     console.log(wineItem);
     this.wineItemRef$.push(this.wineItem)
-  }
-  
-
-  
-  logForm(){
-    console.log(this.wine.value)
+    this.wineItem = {} as WineItem;
+    this.navCtrl.pop();
   }
 
 }
