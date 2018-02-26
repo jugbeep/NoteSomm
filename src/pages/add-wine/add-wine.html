@@ -10,4 +10,12 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item *ngFor='let x of wineListRef$ | async'>
+      <h2>Wine Name: {{x.wineName}}</h2>
+      <h3>Color: {{x.wineColor}}</h3>
+      <h3>Aromas: {{x.wineAroma}}</h3>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

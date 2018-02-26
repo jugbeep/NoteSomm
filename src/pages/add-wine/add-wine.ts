@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { WineItem } from '../../models/wine-item/wine-item';
-/**
- * Generated class for the AddWinePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @IonicPage()
 @Component({
@@ -15,9 +10,16 @@ import { WineItem } from '../../models/wine-item/wine-item';
 })
 export class AddWinePage {
 
-  wineItem = {} as WineItem;
+  wineListRef$: FirebaseListObservable<WineItem[]>
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private database: AngularFireDatabase) {
+
+    this.wineListRef$ = this.database.list('wine-entry');
+
+
   }
 
   ionViewDidLoad() {

@@ -20,6 +20,7 @@ import { Settings } from '../providers/providers';
 import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
+import { ItemCreatePage } from '../pages/item-create/item-create';
 
 //firebase config
 export const firebaseConfig = {
@@ -52,7 +53,8 @@ export function provideSettings(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
-    AddWinePage
+    AddWinePage,
+    ItemCreatePage
   ],
   imports: [
     BrowserModule,
@@ -73,7 +75,8 @@ export function provideSettings(storage: Storage) {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AddWinePage
+    AddWinePage,
+    ItemCreatePage
   ],
   providers: [
     Api,
