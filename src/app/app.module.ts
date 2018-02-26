@@ -13,7 +13,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Environment } from './env'
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AddWinePage } from '../pages/add-wine/add-wine';
-
+import { EditWineItemPage } from '../pages/edit-wine-item/edit-wine-item';
 
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
@@ -54,7 +54,8 @@ export function provideSettings(storage: Storage) {
   declarations: [
     MyApp,
     AddWinePage,
-    ItemCreatePage
+    ItemCreatePage,
+    EditWineItemPage
   ],
   imports: [
     BrowserModule,
@@ -76,7 +77,8 @@ export function provideSettings(storage: Storage) {
   entryComponents: [
     MyApp,
     AddWinePage,
-    ItemCreatePage
+    ItemCreatePage,
+    EditWineItemPage
   ],
   providers: [
     Api,

@@ -3,6 +3,7 @@ import { IonicPage, ModalController, NavController } from 'ionic-angular';
 
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
+import { AddWinePage } from '../add-wine/add-wine';
 
 @IonicPage()
 @Component({
@@ -50,5 +51,9 @@ export class ListMasterPage {
     this.navCtrl.push('ItemDetailPage', {
       item: item
     });
+  }
+
+  goToCollection() {
+    this.navCtrl.push(AddWinePage)
   }
 }

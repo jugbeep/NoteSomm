@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{wineItem.wineName}}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>Wine Name</ion-label>
+    <ion-input type='text' [(ngModel)]='wineItem.wineName'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Color</ion-label>
+    <ion-input type='text' [(ngModel)]='wineItem.wineColor'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Aromas</ion-label>
+    <ion-input type='text' [(ngModel)]='wineItem.wineAroma'></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)='editWineItem(wineItem)'>Edit Wine</button>
+
+</ion-content>

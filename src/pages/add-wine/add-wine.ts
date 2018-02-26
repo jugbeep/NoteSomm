@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { WineItem } from '../../models/wine-item/wine-item';
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
+import { EditWineItemPage } from '../edit-wine-item/edit-wine-item';
+
 
 @IonicPage()
 @Component({
@@ -32,6 +34,7 @@ export class AddWinePage {
           text: 'Edit',
           handler: () => {
             //send user to editwinepage and pass key as param
+            this.navCtrl.push(EditWineItemPage, { wineItemId: wineItem.$key });
           } 
         },
         {
@@ -53,6 +56,5 @@ export class AddWinePage {
     }).present();
   }
 
-x
 
 }
