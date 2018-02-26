@@ -176,14 +176,45 @@
           <ion-label>Aromas</ion-label>
           <ion-item>
             <ion-select multiple='true' [(ngModel)]='wineItem.wineAroma' [ngModelOptions]="{standalone: true}">
-              <ion-option *ngFor='let aroma of aromas' ng-Value='selectedAroma'>{{aroma.aroma}}</ion-option>
+              <ion-option *ngFor='let aroma of aromas'>{{aroma.aroma}}</ion-option>
             </ion-select>
           </ion-item>
-          <ion-item>
-              {{ selectedAroma }} 
-          </ion-item>
         </ion-list>
+
+        <ion-list radio-group formControlName="aromas">
+            <ion-label>Flavors</ion-label>
+            <ion-item>
+              <ion-select multiple='true' [(ngModel)]='wineItem.wineFlavor' [ngModelOptions]="{standalone: true}">
+                <ion-option *ngFor='let flavor of flavors'>{{flavor.flavor}}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+
+          <ion-item>
+            <ion-label>Tannins:</ion-label>
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+              <ion-label range-left>None</ion-label>
+              <ion-label range-right>High</ion-label>
+            </ion-range>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Acidity:</ion-label>
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+              <ion-label range-left>None</ion-label>
+              <ion-label range-right>High</ion-label>
+            </ion-range>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Body:</ion-label>
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+              <ion-label range-left>Light</ion-label>
+              <ion-label range-right>Full</ion-label>
+            </ion-range>
+          </ion-item>
         
+
       <button ion-button type="submit" (click)="addWine(wineItem)">Submit</button>
     </form>
   </div>

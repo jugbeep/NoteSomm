@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Items } from '../../providers/providers';
 import { Aromas } from './aromas';
+import { Flavors } from './flavor';
 import { WineItem } from '../../models/wine-item/wine-item';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { AddWinePage } from '../add-wine/add-wine';
@@ -17,7 +18,7 @@ import { ItemCreatePage } from '../item-create/item-create';
 })
 export class ItemDetailPage {
   @ViewChild('fileInput') fileInput;
-
+  flavors = Flavors;
   wineItem = {} as WineItem;
   color: any;
   item: any;
@@ -39,7 +40,8 @@ export class ItemDetailPage {
       this.wine = this.formBuilder.group({
         name: ['', Validators.required],
         color: ['', Validators.required],
-        aromas: ['', Validators]
+        aromas: ['', Validators.required],
+        flavor: ['', Validators.required]
       });
   }
   
