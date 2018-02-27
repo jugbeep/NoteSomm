@@ -181,14 +181,30 @@
           </ion-item>
         </ion-list>
 
-        <ion-list radio-group formControlName="aromas">
-            <ion-label>Flavors</ion-label>
-            <ion-item>
-              <ion-select multiple='true' [(ngModel)]='wineItem.wineFlavor' [ngModelOptions]="{standalone: true}">
-                <ion-option *ngFor='let flavor of flavors'>{{flavor.flavor}}</ion-option>
-              </ion-select>
-            </ion-item>
-          </ion-list>
+        <ion-list radio-group formControlName="flavor">
+          <ion-label>Flavors</ion-label>
+          <ion-item>
+            <ion-select multiple='true' [(ngModel)]='wineItem.wineFlavor' [ngModelOptions]="{standalone: true}">
+              <ion-option *ngFor='let flavor of flavors'>{{flavor.flavor}}</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <ion-item>
+          <ion-label>Alcohol:</ion-label>
+          <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+            <ion-label range-left>Low</ion-label>
+            <ion-label range-right>High</ion-label>
+          </ion-range>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Sweetness:</ion-label>
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+              <ion-label range-left>Dry</ion-label>
+              <ion-label range-right>Sweet</ion-label>
+            </ion-range>
+          </ion-item>
 
           <ion-item>
             <ion-label>Tannins:</ion-label>
@@ -213,9 +229,17 @@
               <ion-label range-right>Full</ion-label>
             </ion-range>
           </ion-item>
+
+          <ion-item>
+            <ion-label>Rating:</ion-label>
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+              <ion-label range-left>Light</ion-label>
+              <ion-label range-right>Full</ion-label>
+            </ion-range>
+          </ion-item>
         
 
-      <button ion-button type="submit" (click)="addWine(wineItem)">Submit</button>
+      <button ion-button type="submit" [disabled]="!wine.valid" (click)="addWine(wineItem)">Submit</button>
     </form>
   </div>
 </ion-content>
