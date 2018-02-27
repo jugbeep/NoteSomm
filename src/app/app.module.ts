@@ -14,6 +14,7 @@ import { Environment } from './env'
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AddWinePage } from '../pages/add-wine/add-wine';
 import { EditWineItemPage } from '../pages/edit-wine-item/edit-wine-item';
+import { WelcomePage } from '../pages/welcome/welcome';
 
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
