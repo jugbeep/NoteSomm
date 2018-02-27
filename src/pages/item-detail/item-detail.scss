@@ -13,6 +13,13 @@ page-item-detail {
     height: 5px;
   }
 
+  .select-ios .select-icon {
+    position: fixed;
+    top: 3px;
+    left: 12px;
+    height: 0px;
+  }
+
   .item-profile {
     border-radius: 50%;
     width: 35px;
