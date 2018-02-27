@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>{{ item.name }}</ion-title>
   </ion-navbar>
 </ion-header>
@@ -7,7 +7,8 @@
   
 <ion-content>
     <ion-buttons class='camera'>
-      <button ion-button icon-only full (click)="picPage()">
+      <br>
+      <button ion-button icon-only block round (click)="picPage()">
         <ion-icon name="ios-camera"></ion-icon>Bottle Shot
       </button>
     </ion-buttons>

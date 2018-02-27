@@ -42,7 +42,7 @@ export class ItemDetailPage {
         name: ['', Validators.required],
         color: ['', Validators.required],
         aromas: ['', Validators],
-        flavor: ['', Validators],
+        flavor: ['', Validators]
       });
   }
   
