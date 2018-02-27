@@ -3,9 +3,16 @@ page-item-detail {
   div.alert-radio-label {
     background-color: red;
   }
-  .radio-ios {
-    color: black;
+  .radio-icon.radio-checked.radio-ios {
+    $radio-ios-color-on: white;
   }
+
+  .radio-icon.radio-checked {
+    margin: 8px 9px 9px 10px;
+    width: 5px;
+    height: 5px;
+  }
+
   .item-profile {
     border-radius: 50%;
     width: 35px;

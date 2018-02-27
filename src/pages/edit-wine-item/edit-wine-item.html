@@ -1,7 +1,7 @@
 
 <ion-header>
 
-  <ion-navbar color="primary" >
+  <ion-navbar >
     <ion-title>{{wineItem.wineName}}</ion-title>
   </ion-navbar>
 
@@ -28,7 +28,36 @@
     <ion-label floating>Flavors</ion-label>
     <ion-input type='text' [(ngModel)]='wineItem.wineFlavor'></ion-input>
   </ion-item>
+
+  <ion-item>
+    <ion-label floating>Alcohol</ion-label>
+    <ion-input type='text' [(ngModel)]='wineItem.wineAlcohol'>/10</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Acidity</ion-label>
+    <ion-input type='text' [(ngModel)]='wineItem.wineAcidity'>/10</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Sweetness</ion-label>
+    <ion-input type='text' [(ngModel)]='wineItem.wineSweetness'>/10</ion-input>
+  </ion-item>
   
+  <ion-item>
+    <ion-label floating>Tannins</ion-label>
+    <ion-input type='text' [(ngModel)]='wineItem.wineTannins'>/10</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Body</ion-label>
+    <ion-input type='text' [(ngModel)]='wineItem.wineBody'>/10</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Rating</ion-label>
+    <ion-input type='text' [(ngModel)]='wineItem.wineRating'>/10</ion-input>
+  </ion-item>
 
   <button ion-button block (click)='editWineItem(wineItem)'>Edit Wine</button>
 
