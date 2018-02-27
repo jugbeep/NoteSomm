@@ -24,14 +24,13 @@ export class TutorialPage {
     translate.get(["TUTORIAL_SLIDE1_TITLE",
       "TUTORIAL_SLIDE1_DESCRIPTION",
       "TUTORIAL_SLIDE3_TITLE",
-      "TUTORIAL_SLIDE3_DESCRIPTION",
+      "TUTORIAL_SLIDE3_DESCRIPTION"
     ]).subscribe(
       (values) => {
         console.log('Loaded values', values);
         this.slides = [
           {
             title: values.TUTORIAL_SLIDE1_TITLE,
-            description: values.TUTORIAL_SLIDE1_DESCRIPTION,
             image: 'assets/img/NoteSomm.png',
           },
           {
