@@ -25,7 +25,7 @@ export class ItemDetailPage {
   aromas = Aromas;
   wineItemRef$: FirebaseListObservable<WineItem[]>
   form: FormGroup;
-  number: number;
+
 
   private wine : FormGroup;
   constructor(

@@ -192,7 +192,7 @@
 
         <ion-item>
           <ion-label>Alcohol:</ion-label>
-          <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+          <ion-range min="1" max="10" step="1" snaps="true" color="primary" [(ngModel)]='wineItem.wineAlcohol' [ngModelOptions]="{standalone: true}">
             <ion-label range-left>Low</ion-label>
             <ion-label range-right>High</ion-label>
           </ion-range>
@@ -200,7 +200,7 @@
 
         <ion-item>
           <ion-label>Sweetness:</ion-label>
-            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary" [(ngModel)]='wineItem.wineSweetness' [ngModelOptions]="{standalone: true}">
               <ion-label range-left>Dry</ion-label>
               <ion-label range-right>Sweet</ion-label>
             </ion-range>
@@ -208,7 +208,7 @@
 
           <ion-item>
             <ion-label>Tannins:</ion-label>
-            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary" [(ngModel)]='wineItem.wineTannins' [ngModelOptions]="{standalone: true}">
               <ion-label range-left>None</ion-label>
               <ion-label range-right>High</ion-label>
             </ion-range>
@@ -216,7 +216,7 @@
 
           <ion-item>
             <ion-label>Acidity:</ion-label>
-            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary" [(ngModel)]='wineItem.wineAcidity' [ngModelOptions]="{standalone: true}">
               <ion-label range-left>None</ion-label>
               <ion-label range-right>High</ion-label>
             </ion-range>
@@ -224,7 +224,7 @@
 
           <ion-item>
             <ion-label>Body:</ion-label>
-            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary" [(ngModel)]='wineItem.wineBody' [ngModelOptions]="{standalone: true}">
               <ion-label range-left>Light</ion-label>
               <ion-label range-right>Full</ion-label>
             </ion-range>
@@ -232,7 +232,7 @@
 
           <ion-item>
             <ion-label>Rating:</ion-label>
-            <ion-range min="1" max="10" step="1" snaps="true" color="primary">
+            <ion-range min="1" max="10" step="1" snaps="true" color="primary" [(ngModel)]='wineItem.wineRating' [ngModelOptions]="{standalone: true}">
               <ion-label range-left>Light</ion-label>
               <ion-label range-right>Full</ion-label>
             </ion-range>
