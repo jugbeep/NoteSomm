@@ -14,11 +14,12 @@ page-item-detail {
   }
 
   .select-ios .select-icon {
-    position: fixed;
-    top: 3px;
-    left: 12px;
-    height: 0px;
+    position: relative;
   }
+
+  .select-placeholder {
+    margin: -17px;
+}
 
   .item-profile {
     border-radius: 50%;
