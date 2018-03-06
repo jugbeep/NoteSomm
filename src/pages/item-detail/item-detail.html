@@ -232,10 +232,10 @@
           </ion-item>
 
           <ion-item>
-            <ion-label>Rating:</ion-label>
-            <ion-range min="1" max="10" step="1" snaps="true" color="primary" [(ngModel)]='wineItem.wineRating' [ngModelOptions]="{standalone: true}">
-              <ion-label range-left>Light</ion-label>
-              <ion-label range-right>Full</ion-label>
+            <ion-label>Rating: {{wineItem.wineRating}}</ion-label>
+            <ion-range min="1" max="100" step="1" snaps="true" color="primary" [(ngModel)]='wineItem.wineRating' [ngModelOptions]="{standalone: true}">
+              <ion-label range-left>1</ion-label>
+              <ion-label range-right>100</ion-label>
             </ion-range>
           </ion-item>
         

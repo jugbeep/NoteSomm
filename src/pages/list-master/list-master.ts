@@ -3,8 +3,6 @@ import { IonicPage, ModalController, NavController } from 'ionic-angular';
 
 import { Item } from '../../models/item';
 import { Items } from '../../providers/providers';
-import { AddWinePage } from '../add-wine/add-wine';
-import { WelcomePage } from '../welcome/welcome';
 
 @IonicPage()
 @Component({
@@ -55,10 +53,10 @@ export class ListMasterPage {
   }
 
   logout() {
-    this.navCtrl.push(WelcomePage)
+    this.navCtrl.push('WelcomePage')
   }
 
   goToCollection() {
-    this.navCtrl.push(AddWinePage)
+    this.navCtrl.push('AddWinePage')
   }
 }

@@ -6,9 +6,7 @@ import { Aromas } from './aromas';
 import { Flavors } from './flavor';
 import { WineItem } from '../../models/wine-item/wine-item';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database-deprecated';
-import { AddWinePage } from '../add-wine/add-wine';
 import { Camera } from '@ionic-native/camera';
-import { ItemCreatePage } from '../item-create/item-create';
 
 
 @IonicPage()
@@ -51,10 +49,10 @@ export class ItemDetailPage {
     console.log(wineItem);
     this.wineItemRef$.push(this.wineItem)
     this.wineItem = {} as WineItem;
-    this.navCtrl.push(AddWinePage);
+    this.navCtrl.push('AddWinePage');
   }
 
   picPage() {
-    this.navCtrl.push(ItemCreatePage)
+    this.navCtrl.push('ItemCreatePage')
   }
 }

@@ -12,15 +12,12 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { Environment } from './env'
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
-import { AddWinePage } from '../pages/add-wine/add-wine';
-import { EditWineItemPage } from '../pages/edit-wine-item/edit-wine-item';
 
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/providers';
 import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
 import { MyApp } from './app.component';
-import { ItemCreatePage } from '../pages/item-create/item-create';
 
 //firebase config
 export const firebaseConfig = {
@@ -52,10 +49,7 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    MyApp,
-    AddWinePage,
-    ItemCreatePage,
-    EditWineItemPage
+    MyApp
   ],
   imports: [
     BrowserModule,
@@ -75,10 +69,7 @@ export function provideSettings(storage: Storage) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    AddWinePage,
-    ItemCreatePage,
-    EditWineItemPage
+    MyApp
   ],
   providers: [
     Api,
