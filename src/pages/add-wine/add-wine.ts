@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController } from 'ionic-angular';
 import { WineItem } from '../../models/wine-item/wine-item';
+import { Aroma } from '../../models/aroma'
 import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/database-deprecated';
 
 @IonicPage()
@@ -11,6 +12,7 @@ import { FirebaseListObservable, AngularFireDatabase } from 'angularfire2/databa
 export class AddWinePage {
 
   wineListRef$: FirebaseListObservable<WineItem[]>
+  wineAromas$: FirebaseListObservable<Aroma[]>
 
   constructor(
     private actionSheet: ActionSheetController,
@@ -20,7 +22,7 @@ export class AddWinePage {
 
     this.wineListRef$ = this.database.list('wine-entry');
 
-  }
+    }
 
   selectWineItem(wineItem: WineItem) {
     //CRUD on wine item

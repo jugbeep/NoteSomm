@@ -42,7 +42,9 @@ export class MyApp {
     { title: 'Master Detail', component: 'ListMasterPage' },
     { title: 'AddWine', component: 'AddWinePage' },
     { title: 'EditWineItem', component: 'EditWineItemPage' },
-    { title: 'ItemCreate', component: 'ItemCreatePage' }
+    { title: 'ItemCreate', component: 'ItemCreatePage' },
+    { title: 'ItemDetail', component: 'ItemDetailPage' }
+
   ]
 
   constructor(private translate: TranslateService, platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {

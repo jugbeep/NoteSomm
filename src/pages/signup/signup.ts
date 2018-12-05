@@ -28,7 +28,7 @@ export class SignupPage {
         this.navCtrl.setRoot('HomePage');
       }
     } catch (e) {
-      console.error(e);
+      alert(e);
     }
   }
 }

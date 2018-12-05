@@ -1,3 +1,8 @@
 page-edit-wine-item {
 
+    .item-inne.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+        border-bottom-color: #71005c; // or any thing
+        border-width: 4px;
+        box-shadow: none;
+    }
 }

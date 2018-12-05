@@ -12,7 +12,7 @@ import { WineItem } from '../../models/wine-item/wine-item';
 })
 export class EditWineItemPage {
   wineItemSubscription: Subscription;
-  wineItemRef$: FirebaseObjectObservable<WineItem>
+  wineItemRef: FirebaseObjectObservable<WineItem>
   wineItem = {} as WineItem;
 
   constructor(
@@ -20,21 +20,20 @@ export class EditWineItemPage {
     public navParams: NavParams,
     private database: AngularFireDatabase) {
 
-
       // set scope of firebase object = to the selected wine
       const wineItemId = this.navParams.get('wineItemId');
 
       console.log(wineItemId)
   
-      this.wineItemRef$ = this.database.object(`wine-entry/${wineItemId}`);
+      this.wineItemRef = this.database.object(`wine-entry/${wineItemId}`);
 
       //subcribe to the object and assign the result to this.wineItem
-      this.wineItemSubscription = this.wineItemRef$.subscribe(wineItem => this.wineItem = wineItem);  
+      this.wineItemSubscription = this.wineItemRef.subscribe(wineItem => this.wineItem = wineItem);  
     }
 
     // updates firebase with new wine info
   editWineItem(wineItem: WineItem) {
-    this.wineItemRef$.update(wineItem);
+    this.wineItemRef.update(wineItem);
 
     this.navCtrl.pop();
   }
